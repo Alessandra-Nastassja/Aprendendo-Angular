@@ -1,0 +1,10 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="row mt-5 mb-5">
+    <div class="col-md-2">
+        <app-filtros #filtros></app-filtros>
+    </div>
+    <div class="col-md-10">
+        <app-food [comidas]="filtros.comidas" [numComidas]="filtros.numComidas"></app-food>
+    </div>
+</div>

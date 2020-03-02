@@ -1,0 +1,70 @@
+<!-- Modal -->
+<div class="modal fade" id="produtoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" *ngFor="let item of infoComida">
+            <div class="modal-header">
+                <h5 class="modal-title pr-2" id="exampleModalLabel" [innerText]="item.description"></h5>
+                <p>
+                    (<span [innerText]="item.base_qty"></span>
+                    <span [innerText]="item.base_unit"></span>)
+                </p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Quantidade por porção *</p>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Carboidratos
+                        <div class="badge badge-info badge-pill">
+                            <span [innerText]="item.attributes.carbohydrate.qty | number:'1.2-2'"></span>
+                            <span [innerText]="item.attributes.carbohydrate.unit"></span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Proteinas
+                        <div class="badge badge-info badge-pill">
+                            <span [innerText]="item.attributes.protein.qty | number:'1.2-2'"></span>
+                            <span [innerText]="item.attributes.protein.unit"></span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Gorduras
+                        <div class="badge badge-info badge-pill">
+                            <span [innerText]="item.attributes.lipid.qty | number:'1.2-2'"></span>
+                            <span [innerText]="item.attributes.lipid.unit"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Food de comidas -->
+<div class="food" [ngClass]="isLoading? 'loading':''">
+    <h5>Todos os produtos</h5>
+    <hr>
+    <p *ngIf="numComidas"><span [innerText]="numComidas">0</span> produtos</p>
+    <div class="row pr-0 pl-0 ml-0 mr-0">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-5" *ngFor="let produto of comidas">
+            <div class="card" style="width: 100%; height: 100%">
+                <div class="card-body">
+                    <a class="card-title" [innerText]="produto.description"></a>
+                    <p class="card-text">
+                        Porção de <span [innerText]="produto.base_qty"></span>
+                        <span [innerText]="produto.base_unit"></span>
+                    </p>
+                    <hr>
+                    <button type="button" class="btn btn-info btn-sm btn-block text-white" data-toggle="modal"
+                        data-target="#produtoModal" id="{{ produto.id }}" (click)="getInfoFood($event)">
+                        Ver detalhes
+                    </button>
+                </div>
+            </div>
+        </div>
+        <p *ngIf="!comidas">Nenhum produto encontrado!</p>
+    </div>
+</div>

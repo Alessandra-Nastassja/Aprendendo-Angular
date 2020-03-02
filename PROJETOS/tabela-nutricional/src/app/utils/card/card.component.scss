@@ -1,0 +1,33 @@
+// CORES
+
+$red: #ff6961;
+$orange: #ffae00;
+
+/* --------------------------------------------------*/
+.content-resumo-produtos{
+
+    .indicador{
+        font-size: 2em;
+        font-weight: 600;
+
+        &.indicador-atencao{
+            color: $red;
+        }
+        &.indicador-alerta{
+            color: $orange;
+        }
+    }
+
+    span{
+        font-size: 0.8em;
+        font-weight: 700;
+        background-color: $red;
+        padding: 2px 5px;
+        border: 1px solid #ff574d;
+        border-radius: 15px;
+
+        &.tag-atencao{
+            color: white;
+        }
+    }
+}
