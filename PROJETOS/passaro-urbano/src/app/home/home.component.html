@@ -14,7 +14,7 @@
         <div class="card-body">
           <h4 class="card-title" [innerText]="oferta.titulo"></h4>
           <p class="card-text" [innerText]="oferta.descricao_oferta"></p>
-          <p class="preco" [innerText]="oferta.valor"></p>
+          <p class="preco" [innerText]="oferta.valor | currency: 'BRL' "></p>
           <a [routerLink]="['/oferta', oferta.id]" class="btn btn-outline-primary">Ver oferta</a>
         </div>
       </div>
