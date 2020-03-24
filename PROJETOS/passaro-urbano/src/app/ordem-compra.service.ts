@@ -11,7 +11,7 @@ export class OrdemCompraService{
 
     constructor(private http: Http){}
 
-    efetivarCompra(pedido: Pedido): Observable<any>{
-        return this.http.post(``)
-    }
+    // efetivarCompra(pedido: Pedido): Observable<any>{
+    //     return this.http.post(``)
+    // }
 }

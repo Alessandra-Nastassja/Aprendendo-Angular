@@ -14,7 +14,7 @@ import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
-import { OrdermCompraComponent } from './orderm-compra/orderm-compra.component';
+import { OrdemCompraComponent } from './orderm-compra/orderm-compra.component';
 
 import { DescricaoReduzida } from "./util/descricao-reduzida.pipe";
 @NgModule({
@@ -29,7 +29,7 @@ import { DescricaoReduzida } from "./util/descricao-reduzida.pipe";
     ComoUsarComponent,
     OndeFicaComponent,
     DescricaoReduzida,
-    OrdermCompraComponent
+    OrdemCompraComponent
   ],
   imports: [
     BrowserModule,
