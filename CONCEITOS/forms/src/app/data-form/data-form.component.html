@@ -1,22 +1,23 @@
-<form [formGroup]="formulario">
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
-                <small class="form-text text-danger">Nome é obrigatório.</small>
+                <input type="text" class="form-control" id="nome" placeholder="Nome"
+                    formControlName="nome">
+                <small class="form-text text-danger" *ngIf="!formulario.get('nome').valid && formulario.get('email').touched">Nome é obrigatório.</small>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+                <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email"
                     aria-hidden="true">
-                <small class="form-text text-danger">Email é obrigatório.</small>
+                <small class="form-text text-danger" *ngIf="formulario.get('email').errors && formulario.get('email').touched">Email é obrigatório.</small>
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Enviar</button>
 
-    <app-form-debug [form]="formulario"></app-form-debug>
+    <!-- <app-form-debug [form]="formulario"></app-form-debug> -->
 </form>
