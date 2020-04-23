@@ -7,7 +7,7 @@ import { RestaurantesComponent } from "../app/restaurantes/restaurantes.componen
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
-import { OrdemCompraComponent } from './orderm-compra/orderm-compra.component';
+import { OrdermCompraComponent } from './orderm-compra/orderm-compra.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'como-usar', component: ComoUsarComponent },
       { path: 'onde-fica', component: OndeFicaComponent }
     ]},
-  { path: 'ordem-compra', component:  OrdemCompraComponent }
+  { path: 'ordem-compra', component:  OrdermCompraComponent }
 ];
 
 @NgModule({
